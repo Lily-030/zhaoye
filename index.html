@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赵烨 Ye Zhao | Data & Creative Strategist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-light: #f5f5f7;
+            --glass-bg: rgba(255, 255, 255, 0.65);
+            --glass-card: rgba(255, 255, 255, 0.75);
+            --glass-border: rgba(255, 255, 255, 0.8);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+            --glass-shadow-hover: 0 16px 48px 0 rgba(31, 38, 135, 0.12);
+            --text-primary: #1d1d1f;
+            --text-secondary: #86868b;
+            --text-tertiary: #6e6e73;
+            --accent-blue: #0071e3;
+            --accent-purple: #af52de;
+            --accent-indigo: #5856d6;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            line-height: 1.5;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(0, 113, 227, 0.12) 0px, transparent 50%),
+                radial-gradient(at 90% 20%, rgba(175, 82, 222, 0.12) 0px, transparent 50%),
+                radial-gradient(at 50% 80%, rgba(88, 86, 214, 0.08) 0px, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Glassmorphism Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(245, 245, 247, 0.7);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 400;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 160px 0 100px;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .apple-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 113, 227, 0.2);
+            color: var(--accent-blue);
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 24px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            line-height: 1.08;
+            font-weight: 700;
+            letter-spacing: -1.5px;
+            margin-bottom: 20px;
+            background: linear-gradient(180deg, #1d1d1f 0%, #434344 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 36px;
+            line-height: 1.5;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+        }
+
+        .apple-btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 12px 26px;
+            border-radius: 980px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: #fff;
+            box-shadow: 0 4px 16px rgba(0, 113, 227, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: #0077ed;
+            transform: scale(1.02);
+            box-shadow: 0 6px 20px rgba(0, 113, 227, 0.35);
+        }
+
+        .btn-glass {
+            background: rgba(255, 255, 255, 0.6);
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(12px);
+        }
+
+        .btn-glass:hover {
+            background: rgba(255, 255, 255, 0.85);
+            transform: scale(1.02);
+        }
+
+        /* Glass Profile Card */
+        .glass-card {
+            background: var(--glass-card);
+            backdrop-filter: blur(25px) saturate(190%);
+            -webkit-backdrop-filter: blur(25px) saturate(190%);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 36px;
+            box-shadow: var(--glass-shadow);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            box-shadow: var(--glass-shadow-hover);
+            transform: translateY(-4px);
+        }
+
+        .profile-card {
+            text-align: center;
+        }
+
+        .avatar-box {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            padding: 3px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(0,113,227,0.3));
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .avatar-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .profile-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .profile-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 24px;
+        }
+
+        .edu-info {
+            border-top: 1px solid rgba(0,0,0,0.06);
+            padding-top: 20px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .edu-item {
+            font-size: 0.85rem;
+            color: var(--text-tertiary);
+        }
+
+        .edu-item strong {
+            color: var(--text-primary);
+            font-weight: 600;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /* Sections */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Dual-Core Matrix (Glass Cards) */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .skill-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+            margin-top: 12px;
+        }
+
+        .skill-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .skill-list {
+            list-style: none;
+            border-top: 1px solid rgba(0,0,0,0.05);
+            padding-top: 16px;
+        }
+
+        .skill-list li {
+            font-size: 0.88rem;
+            color: var(--text-primary);
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-list li::before {
+            content: "•";
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+        }
+
+        /* Closed Loop Case Studies */
+        .case-list {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .case-card-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .case-content {
+            padding: 44px;
+        }
+
+        .case-tag {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 8px;
+        }
+
+        .case-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+            margin-bottom: 24px;
+        }
+
+        .step-box {
+            background: rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+
+        .step-title {
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+
+        .step-desc {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .case-data-panel {
+            background: rgba(255, 255, 255, 0.4);
+            border-left: 1px solid rgba(0,0,0,0.05);
+            padding: 44px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 28px;
+        }
+
+        .data-number {
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: -1px;
+            color: var(--text-primary);
+            line-height: 1;
+            margin-bottom: 6px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .data-label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Portfolio Showcase */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .portfolio-card {
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .media-box {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn-apple {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            color: var(--accent-blue);
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-card:hover .play-btn-apple {
+            transform: scale(1.1);
+        }
+
+        .portfolio-info {
+            padding: 24px;
+        }
+
+        .portfolio-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-desc {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .tag-pill {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 4px 10px;
+            border-radius: 12px;
+            background: rgba(0, 113, 227, 0.08);
+            color: var(--accent-blue);
+            font-weight: 500;
+            margin-right: 6px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 80px 0 40px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .footer-title {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.8px;
+            margin-bottom: 12px;
+        }
+
+        .footer-sub {
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+        }
+
+        .social-row {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 32px;
+        }
+
+        .social-item {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        .social-item:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .case-card-grid { grid-template-columns: 1fr; }
+            .case-data-panel { border-left: none; border-top: 1px solid rgba(0,0,0,0.05); }
+            .portfolio-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Apple Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">Ye Zhao / 赵烨</a>
+            <ul class="nav-links">
+                <li><a href="#about">关于</a></li>
+                <li><a href="#skills">双核能力</a></li>
+                <li><a href="#cases">增长案例</a></li>
+                <li><a href="#portfolio">AI 作品集</a></li>
+                <li><a href="#contact">联系</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container hero-grid">
+            <div>
+                <span class="apple-badge">Data-Driven Growth & AIGC Creative Strategist</span>
+                <h1 class="hero-title">理性数据洞察<br>感性视觉美学</h1>
+                <p class="hero-subtitle">
+                    悉尼大学金融与数据分析硕士。用严谨的数据模型拆解用户行为与增长路径，结合 AIGC 视频创作与商业插画策划，为数字内容与游戏生态注入闭环增长动力。
+                </p>
+                <div class="cta-group">
+                    <a href="#cases" class="apple-btn btn-primary">浏览增长案例</a>
+                    <a href="#portfolio" class="apple-btn btn-glass">查看 AI 作品集</a>
+                </div>
+            </div>
+
+            <!-- Profile Card -->
+            <div class="glass-card profile-card">
+                <div class="avatar-box">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" alt="赵烨照片">
+                </div>
+                <h3>赵烨</h3>
+                <p>全栈数字内容运营与增长策划</p>
+                <div class="edu-info">
+                    <div class="edu-item">
+                        <strong>悉尼大学 (The University of Sydney)</strong>
+                        金融与数据分析 | 硕士 (2024 - 2026)
+                    </div>
+                    <div class="edu-item">
+                        <strong>西安电子科技大学</strong>
+                        管理科学与工程类 | 本科 (2019 - 2023)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">双核能力矩阵</h2>
+                <p class="section-subtitle">融合数据分析的理性深度与视觉创意的表达张力</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="glass-card skill-card">
+                    <span style="font-size: 2rem;">📊</span>
+                    <h3>数据分析与归因</h3>
+                    <p>具备严谨的数据清洗与建模分析能力，精准洞察用户行为与转化漏斗。</p>
+                    <ul class="skill-list">
+                        <li>Tableau 动态看板搭建与可视化</li>
+                        <li>Python / C 脚本数据清洗与分析</li>
+                        <li>全链路转化数据归因与效果复盘</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card skill-card">
+                    <span style="font-size: 2rem;">🎨</span>
+                    <h3>AIGC 与视觉表达</h3>
+                    <p>将前沿 AI 工具与成熟的商业插画经验结合，实现高效率视觉内容打造。</p>
+                    <ul class="skill-list">
+                        <li>AI 视频生成与工作流 (MJ + Runway)</li>
+                        <li>商业插画全案设计与视觉包装</li>
+                        <li>故事化叙事与爆款内容策划</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card skill-card">
+                    <span style="font-size: 2rem;">🚀</span>
+                    <h3>全链路运营与社群</h3>
+                    <p>深耕游戏与新媒体领域，具备全球化视角与海外社区生态建设能力。</p>
+                    <ul class="skill-list">
+                        <li>新媒体爆款打造 (单篇 10W+ 阅读)</li>
+                        <li>游戏全类型活动策划与卖点包装</li>
+                        <li>海外 Discord 社区运营与玩家反馈</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section id="cases">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">精选增长案例</h2>
+                <p class="section-subtitle">从数据发现问题，以创意寻找突破，用复盘验证转化</p>
+            </div>
+
+            <div class="case-list">
+                <!-- Case 1 -->
+                <div class="glass-card case-card-grid">
+                    <div class="case-content">
+                        <div class="case-tag">第七大道 · 游戏运营实习</div>
+                        <h3 class="case-title">《神曲》公众号增长与活动转化提升</h3>
+                        <div class="step-box">
+                            <div class="step-title">1. Data / Insight (数据洞察)</div>
+                            <div class="step-desc">接手时面临粉丝负增长，单月阅读仅 4,800，玩家参与意愿低。</div>
+                        </div>
+                        <div class="step-box">
+                            <div class="step-title">2. Creative Strategy (创意策略)</div>
+                            <div class="step-desc">围绕节日节点与星座卖点包装，优化用户参与路径，联动海外 Discord 社群宣发。</div>
+                        </div>
+                        <div class="step-box">
+                            <div class="step-title">3. Impact (复盘成果)</div>
+                            <div class="step-desc">扭转负增长，实现粉丝净增，活动整体参与率环比提升 10%。</div>
+                        </div>
+                    </div>
+                    <div class="case-data-panel">
+                        <div>
+                            <div class="data-number">+108%</div>
+                            <div class="data-label">推文月阅读量 (4.8k 提升至 10k+)</div>
+                        </div>
+                        <div>
+                            <div class="data-number">+10%</div>
+                            <div class="data-label">游戏内活动整体参与率提升</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case 2 -->
+                <div class="glass-card case-card-grid">
+                    <div class="case-content">
+                        <div class="case-tag">腾讯 IEG (TCA) · 项目统筹</div>
+                        <h3 class="case-title">《王者荣耀》校园矩阵与内容模型沉淀</h3>
+                        <div class="step-box">
+                            <div class="step-title">1. Data / Insight (数据洞察)</div>
+                            <div class="step-desc">拆解高校群体偏好，发现传统物料触达效率遇瓶颈。</div>
+                        </div>
+                        <div class="step-box">
+                            <div class="step-title">2. Creative Strategy (创意策略)</div>
+                            <div class="step-desc">统筹社团与 KOC 资源，独立策划创意内容库，产出 8+ 文案与 2 支视频。</div>
+                        </div>
+                        <div class="step-box">
+                            <div class="step-title">3. Impact (复盘成果)</div>
+                            <div class="step-desc">方案通过腾讯总部评估并落地，沉淀可复用的校园内容传播数据归因模型。</div>
+                        </div>
+                    </div>
+                    <div class="case-data-panel">
+                        <div>
+                            <div class="data-number">100%</div>
+                            <div class="data-label">创意内容库方案总部评估通过率</div>
+                        </div>
+                        <div>
+                            <div class="data-number">TOP</div>
+                            <div class="data-label">获评 TCA 优秀组员</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">AI 视频与作品集展厅</h2>
+                <p class="section-subtitle">探索 AIGC 技术与艺术表达在实际业务场景中的落地落地</p>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="glass-card portfolio-card">
+                    <div class="media-box">
+                        <div class="play-btn-apple">▶</div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4 class="portfolio-title">AI 概念预告片 (Concept Trailer)</h4>
+                        <p class="portfolio-desc">基于 Midjourney 保持角色一致性分镜，结合 Runway 进行动作控制与渲染。</p>
+                        <div>
+                            <span class="tag-pill">MJ + Runway</span>
+                            <span class="tag-pill">AI 视频</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card portfolio-card">
+                    <div class="media-box" style="background: linear-gradient(135deg, #fbcfe8, #f472b6);">
+                        🎨 视觉作品预览
+                    </div>
+                    <div class="portfolio-info">
+                        <h4 class="portfolio-title">「战疫情」故事化原创插画</h4>
+                        <p class="portfolio-desc">采用原创插画与故事化叙事结合，发表于官方公众号，实现单篇 10W+ 阅读。</p>
+                        <div>
+                            <span class="tag-pill">Procreate</span>
+                            <span class="tool-pill">10W+ 爆款</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card portfolio-card">
+                    <div class="media-box" style="background: linear-gradient(135deg, #bfdbfe, #60a5fa);">
+                        📊 Tableau 分析模型
+                    </div>
+                    <div class="portfolio-info">
+                        <h4 class="portfolio-title">用户留存与转化归因看板</h4>
+                        <p class="portfolio-desc">通过 Tableau 搭建的动态数据分析系统，可视化呈现漏斗转化与留存规律。</p>
+                        <div>
+                            <span class="tag-pill">Tableau</span>
+                            <span class="tag-pill">数据看板</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Footer -->
+    <footer id="contact">
+        <div class="container">
+            <h2 class="footer-title">期待与您交流合作</h2>
+            <p class="footer-sub">数据洞察 / AIGC内容生成 / 游戏运营与社群增长</p>
+            <a href="mailto:yzhao2725@gmail.com" class="apple-btn btn-primary" style="padding: 14px 36px; font-size: 1.05rem;">
+                📧 yzhao2725@gmail.com
+            </a>
+            <div class="social-row">
+                <span class="social-item">📞 18736629996</span>
+                <span class="social-item">📍 悉尼 / 广州</span>
+                <span class="social-item">💬 Discord: YeZhao_321</span>
+            </div>
+            <p style="margin-top: 40px; color: var(--text-tertiary); font-size: 0.8rem;">
+                © 2026 Ye Zhao. Designed with Apple Glassmorphic Style.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
