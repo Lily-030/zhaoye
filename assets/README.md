@@ -3,9 +3,10 @@
 当前网站使用以下素材文件：
 
 - `lifestyle.jpg`：关于我模块中的生活照。
-- `ai-video.mp4`：《第五人格》红蝶 AI 角色概念短片。
+- `ai-video.mp4`：《第五人格》红蝶 AI 角色概念短片；采用 H.264/AAC 网页兼容编码与 fast-start。
 - `mooncake-box-reference.jpeg`：西电中秋礼盒包装展开图。
 - `mooncake-reference.jpeg`：西电月饼实物图。
+- `xidian-merch-design.jpeg`：西电校园文化周边图案设计。
 - `emoji-pack.png`：“哈喽小西小电”表情包预览。
 - `emoji-performance.png`：微信表情开放平台传播数据。
 - `thailand-digital-nomad-dashboard.png`：泰国数字游民政策洞察看板。
