@@ -1,13 +1,15 @@
 # 媒体文件
 
-把个人素材上传到这个 `assets` 文件夹，并保持下面的文件名：
+当前网站使用以下素材文件：
 
-- `avatar.jpg`：个人头像，建议正方形，至少 1000 × 1000 px，JPG/WebP 均可（如使用 WebP，请同步修改 `index.html` 文件名）。
-- `lifestyle.jpg`：首屏全屏生活照，建议竖版或横版高清照片；当前使用海上生活照。
-- `ai-video.mp4`：AI 概念预告片，建议 H.264 编码的 MP4，1080p，尽量控制在 50 MB 内。
-- `xd-creative.jpg`：西电周边、表情包或插画项目封面，建议 1600 × 1000 px。
-- `tableau-dashboard.jpg`：Tableau 看板截图，建议 1600 × 1000 px。
-- `Ye-Zhao-Resume.pdf`：可下载的个人简历 PDF；上传后首页“下载简历”按钮会自动生效。
+- `lifestyle.jpg`：关于我模块中的生活照。
+- `ai-video.mp4`：《第五人格》红蝶 AI 角色概念短片。
+- `mooncake-box-reference.jpeg`：西电中秋礼盒包装展开图。
+- `mooncake-reference.jpeg`：西电月饼实物图。
+- `emoji-pack.png`：“哈喽小西小电”表情包预览。
+- `emoji-performance.png`：微信表情开放平台传播数据。
+- `thailand-digital-nomad-dashboard.png`：泰国数字游民政策洞察看板。
+- `Ye-Zhao-Resume.pdf`：首页下载按钮对应的个人简历。
 
 ## 在 GitHub 网页上传
 

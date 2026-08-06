@@ -40,8 +40,8 @@
 
     .shell { width: min(1160px, calc(100% - 44px)); margin-inline: auto; }
     .section { position: relative; padding: 128px 0; scroll-margin-top: 88px; }
-    .section-number { margin: 0 0 14px; color: var(--gold); font-family: var(--serif); font-style: italic; font-size: 14px; letter-spacing: .12em; }
-    .section-title { margin: 0; font-family: var(--serif); font-size: clamp(44px,6vw,78px); font-weight: 400; line-height: 1; letter-spacing: -.045em; }
+    .section-number { margin: 0 0 13px; color: var(--gold); font-family: var(--serif); font-style: italic; font-size: clamp(23px,2.7vw,34px); letter-spacing: .06em; }
+    .section-title { margin: 0; font-family: var(--serif); font-size: clamp(50px,6vw,78px); font-weight: 400; line-height: .98; letter-spacing: -.045em; }
     .section-intro { max-width: 620px; margin: 20px 0 0; color: var(--muted); font-size: 16px; }
     .section-head { margin-bottom: 64px; }
     .rule { height: 1px; background: linear-gradient(90deg,var(--line),transparent); }
@@ -77,29 +77,30 @@
     .photo-frame { position: relative; padding: 10px; border: 1px solid var(--line); border-radius: 180px 180px 24px 24px; background: rgba(255,255,255,.035); overflow: hidden; }
     .photo-frame img { width: 100%; aspect-ratio: .72; object-fit: cover; object-position: 50% 45%; border-radius: 170px 170px 17px 17px; filter: saturate(.85); transition: transform 1.2s var(--ease),filter .5s; }
     .photo-frame:hover img { transform: scale(1.035); filter: saturate(1); }
-    .photo-caption { position: absolute; left: 30px; right: 30px; bottom: 26px; padding: 14px 16px; border: 1px solid rgba(255,255,255,.16); border-radius: 13px; background: rgba(3,11,20,.54); backdrop-filter: blur(15px); font-family: var(--serif); font-style: italic; font-size: 13px; text-align: center; }
+    .photo-caption { position: absolute; left: 22px; right: 22px; bottom: 30px; padding: 23px 16px; border: 0; border-radius: 16px; background: linear-gradient(90deg,rgba(3,11,20,.1),rgba(3,11,20,.68),rgba(3,11,20,.1)); backdrop-filter: blur(5px); text-align: center; overflow: hidden; }
+    .photo-caption strong { position: relative; display: inline-block; color: #fff9e9; font-family: var(--serif); font-size: clamp(29px,3vw,46px); font-weight: 400; font-style: italic; line-height: 1; letter-spacing: .02em; text-shadow: 0 0 7px rgba(255,255,255,.85), 0 0 18px rgba(134,211,255,.7), 0 0 34px rgba(185,150,255,.48); animation: name-glow 2.6s ease-in-out infinite alternate; }
+    .photo-caption span { display: block; margin-top: 8px; color: rgba(255,255,255,.74); font-family: var(--serif); font-size: 11px; letter-spacing: .36em; }
+    .photo-caption::before,.photo-caption::after { content: "✦"; position: absolute; color: #fff7cb; font-size: 14px; filter: drop-shadow(0 0 7px #a6dcff); animation: sparkle 1.9s ease-in-out infinite; }
+    .photo-caption::before { left: 15%; top: 18%; }
+    .photo-caption::after { right: 16%; bottom: 18%; animation-delay: -.8s; }
+    @keyframes name-glow { to { text-shadow: 0 0 10px #fff, 0 0 25px rgba(134,211,255,.9), 0 0 48px rgba(185,150,255,.62); } }
+    @keyframes sparkle { 0%,100% { opacity: .18; transform: scale(.55) rotate(0); } 50% { opacity: 1; transform: scale(1.25) rotate(28deg); } }
     .about-copy .lead { margin: 0 0 28px; font-family: var(--serif); font-size: clamp(27px,3vw,40px); line-height: 1.32; }
     .about-copy > p:not(.lead) { color: var(--muted); font-size: 15px; }
-    .identity { display: flex; gap: 16px; align-items: center; margin-top: 34px; padding-top: 25px; border-top: 1px solid var(--line); }
-    .identity img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; object-position: center 24%; border: 1px solid rgba(255,255,255,.28); }
-    .identity strong { display: block; font-family: var(--serif); font-size: 19px; font-weight: 400; }
-    .identity span { color: var(--muted); font-size: 11px; }
-
     .skills-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; border: 1px solid var(--line); background: var(--line); }
-    .skill { min-height: 360px; padding: 32px; background: rgba(5,13,24,.86); transition: background .4s ease; }
+    .skill { min-height: 360px; padding: 42px 34px; display: flex; flex-direction: column; align-items: center; justify-content: center; background: rgba(5,13,24,.86); text-align: center; transition: background .4s ease; }
     .skill:hover { background: rgba(13,31,50,.92); }
-    .skill-index { color: var(--gold); font-family: var(--serif); font-style: italic; }
-    .skill h3 { margin: 105px 0 15px; font-family: var(--serif); font-size: 28px; font-weight: 400; line-height: 1.15; }
+    .skill h3 { margin: 0 0 22px; font-family: var(--serif); font-size: clamp(32px,3vw,45px); font-weight: 400; line-height: 1.12; }
     .skill p { margin: 0; color: var(--muted); font-size: 13px; }
-    .tags { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 22px; }
+    .tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 7px; margin-top: 25px; }
     .tag { padding: 5px 9px; border: 1px solid var(--line); border-radius: 999px; color: rgba(255,255,255,.66); font-size: 10px; }
 
-    .timeline { position: relative; margin-left: 25%; border-left: 1px solid var(--line); }
-    .timeline-item { position: relative; display: grid; grid-template-columns: 150px 1fr; gap: 34px; padding: 5px 0 64px 54px; }
+    .timeline { position: relative; margin-left: 18%; border-left: 1px solid var(--line); }
+    .timeline-item { position: relative; display: grid; grid-template-columns: 210px 1fr; gap: 38px; padding: 5px 0 68px 54px; }
     .timeline-item::before { content: ""; position: absolute; left: -5px; top: 10px; width: 9px; height: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 18px rgba(219,193,152,.7); }
-    .date { color: var(--gold); font-family: var(--serif); font-style: italic; font-size: 13px; }
-    .timeline-item h3 { margin: 0 0 5px; font-family: var(--serif); font-size: clamp(23px,3vw,34px); font-weight: 400; line-height: 1.18; }
-    .timeline-item h4 { margin: 0 0 15px; color: var(--blue); font-size: 11px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+    .date { color: var(--gold); font-family: var(--serif); font-size: clamp(21px,2.3vw,31px); line-height: 1.15; }
+    .timeline-item h3 { margin: 0 0 8px; font-family: var(--serif); font-size: clamp(31px,3.6vw,47px); font-weight: 400; line-height: 1.12; }
+    .timeline-item h4 { margin: 0 0 18px; color: var(--blue); font-size: 14px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
     .timeline-item p,.timeline-item li { color: var(--muted); font-size: 13px; }
     .timeline-item ul { margin: 0; padding-left: 18px; }
 
@@ -113,18 +114,37 @@
     .metric strong { display: block; color: var(--paper); font-family: var(--serif); font-size: 34px; font-weight: 400; }
     .metric span { color: var(--muted); font-size: 10px; }
 
-    .gallery { display: grid; grid-template-columns: 1.25fr .75fr; grid-template-rows: repeat(2,310px); gap: 14px; }
-    .work { position: relative; border: 1px solid var(--line); overflow: hidden; background: #0c1929; }
-    .work:first-child { grid-row: 1/3; }
-    .work img,.work video { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease),filter .5s; }
-    .work:hover img,.work:hover video { transform: scale(1.035); }
-    .work-shade { position: absolute; inset: 0; background: linear-gradient(180deg,transparent 38%,rgba(2,7,14,.83)); pointer-events: none; }
-    .work-copy { position: absolute; z-index: 2; left: 25px; right: 25px; bottom: 22px; }
-    .work-copy small { color: var(--gold); font-size: 9px; letter-spacing: .13em; text-transform: uppercase; }
-    .work-copy h3 { margin: 5px 0 0; font-family: var(--serif); font-size: 24px; font-weight: 400; }
-    .placeholder { position: absolute; inset: 0; display: grid; place-items: center; color: rgba(255,255,255,.42); background: radial-gradient(circle at 30% 30%,#224b66,#101b30 55%,#171321); font-family: var(--serif); font-style: italic; }
-    .work img:not([hidden]) + .placeholder { display: none; }
-    .video-work video { position: relative; z-index: 1; background: #070b12; }
+    .gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 14px; }
+    .work { position: relative; min-height: 520px; padding: clamp(38px,5vw,68px); border: 1px solid var(--line); overflow: hidden; display: flex; flex-direction: column; justify-content: center; background: linear-gradient(145deg,rgba(13,31,51,.78),rgba(5,14,27,.9)); }
+    .work::before { content: ""; position: absolute; width: 260px; height: 260px; right: -110px; top: -105px; border-radius: 50%; background: rgba(87,157,219,.1); filter: blur(10px); }
+    .work-kicker { position: relative; color: var(--gold); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+    .work h3 { position: relative; max-width: 520px; margin: 23px 0 20px; font-family: var(--serif); font-size: clamp(37px,4vw,58px); font-weight: 400; line-height: 1.08; }
+    .work-summary { position: relative; max-width: 560px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.9; }
+    .work-facts { position: relative; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 34px; }
+    .work-fact { padding: 20px; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,.035); }
+    .work-fact strong { display: block; color: #9bd9ff; font: 400 clamp(27px,3vw,40px)/1 var(--serif); }
+    .work-fact span { display: block; margin-top: 9px; color: var(--muted); font-size: 10px; }
+    .work-keywords { position: relative; margin-top: 22px; color: rgba(255,255,255,.48); font-size: 10px; letter-spacing: .08em; }
+    .work-detail { min-height: 34px; padding: 0 13px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; color: #fff; background: rgba(4,12,22,.52); backdrop-filter: blur(12px); font: 600 10px var(--sans); cursor: pointer; transition: transform .25s,background .25s; }
+    .work-detail:hover { transform: translateY(-2px); background: rgba(255,255,255,.15); }
+    .work > .work-detail { position: relative; align-self: flex-start; margin-top: 26px; }
+
+    .project-dialog { width: min(980px,calc(100% - 28px)); max-height: min(86svh,900px); padding: 0; border: 1px solid rgba(255,255,255,.17); border-radius: 25px; color: var(--ink); background: rgba(7,16,29,.96); box-shadow: 0 40px 100px rgba(0,0,0,.62); overflow: auto; backdrop-filter: blur(25px); }
+    .project-dialog::backdrop { background: rgba(0,4,11,.78); backdrop-filter: blur(8px); }
+    .dialog-close { position: sticky; z-index: 5; float: right; top: 17px; right: 17px; width: 38px; height: 38px; margin: 17px; border: 1px solid var(--line); border-radius: 50%; color: #fff; background: rgba(255,255,255,.08); font-size: 18px; cursor: pointer; }
+    .dialog-inner { padding: 54px; }
+    .dialog-kicker { color: var(--gold); font-size: 10px; letter-spacing: .15em; text-transform: uppercase; }
+    .dialog-inner h2 { margin: 10px 0 17px; font-family: var(--serif); font-size: clamp(37px,5vw,65px); font-weight: 400; line-height: 1; }
+    .dialog-lead { max-width: 700px; color: var(--muted); font-size: 14px; }
+    .dialog-media { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; margin-top: 30px; }
+    .dialog-media.single { grid-template-columns: 1fr; }
+    .dialog-media img,.dialog-media video { width: 100%; max-height: 520px; border: 1px solid var(--line); border-radius: 16px; object-fit: contain; background: #050b14; }
+    .dialog-stats { display: grid; grid-template-columns: repeat(2,1fr); gap: 12px; margin-top: 24px; }
+    .dialog-stat { padding: 21px; border: 1px solid var(--line); border-radius: 15px; background: rgba(255,255,255,.035); }
+    .dialog-stat strong { display: block; color: #9bd9ff; font: 36px var(--serif); }
+    .dialog-stat span { color: var(--muted); font-size: 11px; }
+    .dialog-link { margin-top: 24px; display: inline-flex; min-height: 42px; padding: 0 17px; align-items: center; border: 1px solid var(--line); border-radius: 999px; color: #fff; text-decoration: none; font-size: 11px; }
+    .modal-placeholder { min-height: 300px; border: 1px solid var(--line); border-radius: 16px; display: grid; place-items: center; color: var(--muted); background: radial-gradient(circle at 35% 30%,#21496a,#0c182a 60%); font: italic 20px var(--serif); }
 
     .contact { text-align: center; padding-bottom: 90px; }
     .contact h2 { margin: 0; font-family: var(--serif); font-size: clamp(52px,8vw,112px); font-weight: 400; line-height: .9; letter-spacing: -.055em; }
@@ -137,6 +157,8 @@
     .reveal.visible { opacity: 1; transform: none; }
     .shooting-star { position: fixed; z-index: 80; width: 140px; height: 1px; pointer-events: none; background: linear-gradient(90deg,transparent,#fff); filter: drop-shadow(0 0 5px #84c7ff); transform: rotate(-28deg); animation: shoot .7s ease-out forwards; }
     @keyframes shoot { from { opacity: 0; transform: translate3d(0,0,0) rotate(-28deg) scaleX(.25); } 20% { opacity: 1; } to { opacity: 0; transform: translate3d(250px,145px,0) rotate(-28deg) scaleX(1); } }
+    .cursor-star { position: fixed; z-index: 98; width: 3px; height: 3px; border-radius: 50%; pointer-events: none; background: #fff; box-shadow: 0 0 6px #fff,0 0 12px #8ad7ff; animation: cursor-dust .72s ease-out forwards; }
+    @keyframes cursor-dust { from { opacity: .95; transform: translate(-50%,-50%) scale(1); } to { opacity: 0; transform: translate(calc(-50% + var(--dust-x)),calc(-50% + var(--dust-y))) scale(.1); } }
 
     @media (max-width: 900px) {
       .section { padding: 100px 0; }
@@ -144,7 +166,7 @@
       .photo-frame { width: min(560px,100%); }
       .skills-grid { grid-template-columns: 1fr; }
       .skill { min-height: auto; }
-      .skill h3 { margin-top: 55px; }
+      .skill h3 { margin-top: 0; }
       .timeline { margin-left: 0; }
       .projects { grid-template-columns: 1fr; }
     }
@@ -160,8 +182,11 @@
       .timeline-item { grid-template-columns: 1fr; gap: 8px; padding-left: 32px; }
       .project { min-height: 470px; padding: 27px; }
       .metrics { left: 27px; bottom: 29px; }
-      .gallery { grid-template-columns: 1fr; grid-template-rows: repeat(3,360px); }
-      .work:first-child { grid-row: auto; }
+      .gallery { grid-template-columns: 1fr; }
+      .work { min-height: 470px; }
+      .work-facts { grid-template-columns: 1fr 1fr; }
+      .dialog-inner { padding: 50px 20px 25px; }
+      .dialog-media,.dialog-stats { grid-template-columns: 1fr; }
       .footer-row { flex-direction: column; text-align: center; }
     }
     @media (pointer: coarse) { .cursor-light { display: none; } }
@@ -189,19 +214,29 @@
       <nav class="nav" aria-label="主要导航"><a class="brand" href="#home">Ye Zhao's Universe</a><button class="menu" type="button" aria-expanded="false">菜单</button><div class="nav-links"><a href="#about">关于我</a><a href="#skills">技能</a><a href="#education">教育</a><a href="#experience">实习</a><a href="#projects">项目</a><a href="#portfolio">作品集</a></div></nav>
     </div>
 
-    <section class="section" id="about"><div class="shell"><header class="section-head reveal"><p class="section-number">01 · About me</p><h2 class="section-title">关于我</h2></header><div class="about-grid"><figure class="photo-frame reveal"><img src="assets/lifestyle.jpg" alt="赵烨在海边的生活照"><figcaption class="photo-caption">Curiosity is my compass.</figcaption></figure><div class="about-copy reveal"><p class="lead">在理性的数字世界里寻找规律，也在感性的视觉世界里创造共鸣。</p><p>我是赵烨，悉尼大学金融与数据分析硕士。我的背景横跨数据、商业、内容与视觉创作：既能用 Python、Tableau 和转化漏斗拆解用户行为，也能借助 Midjourney、Runway 和商业插画构建打动人的内容体验。</p><p>我关注的不只是“内容是否好看”，更关注它是否精准触达用户、推动参与并形成可复盘的增长。从游戏运营到校园传播，从 10W+ 内容到海外 Discord 社群，我希望让每一次创意都有依据，也让每一组数据都拥有故事。</p><div class="identity"><img src="assets/avatar.jpg" alt="赵烨证件照"><div><strong>赵烨 · Ye Zhao</strong><span>Data-Driven Growth & AIGC Creative Strategist</span></div></div></div></div></div></section>
+    <section class="section" id="about"><div class="shell"><header class="section-head reveal"><p class="section-number">About me</p><h2 class="section-title">关于我</h2></header><div class="about-grid"><figure class="photo-frame reveal"><img src="assets/lifestyle.jpg" alt="赵烨在海边的生活照"><figcaption class="photo-caption"><strong>赵烨</strong><span>YE ZHAO</span></figcaption></figure><div class="about-copy reveal"><p class="lead">在理性的数字世界里寻找规律，也在感性的视觉世界里创造共鸣。</p><p>我是赵烨，悉尼大学金融与数据分析硕士。金融、数据与管理科学的复合背景，让我能够从商业目标出发理解问题：既有企业筛选、信用风险核查、行业研究与财务数据分析经验，也能使用 Python、Excel 和 Tableau 将复杂信息转化为清晰的判断依据。</p><p>与此同时，我持续探索内容运营与视觉创作的增长价值。从游戏活动、校园传播到海外 Discord 社群，我会用数据拆解用户行为和传播效果，也借助 AIGC 与商业插画构建更有感染力的内容体验。我希望让每一次创意都有依据，也让每一组数据都拥有故事。</p></div></div></div></section>
 
-    <section class="section" id="skills"><div class="shell"><header class="section-head reveal"><p class="section-number">02 · Capabilities</p><h2 class="section-title">技能星图</h2><p class="section-intro">数据是坐标，创意是引力，运营让二者形成真实的增长轨迹。</p></header><div class="skills-grid"><article class="skill reveal"><span class="skill-index">I.</span><h3>数据分析<br>& 归因</h3><p>数据清洗、动态看板、用户留存、活动漏斗与效果复盘。</p><div class="tags"><span class="tag">Python</span><span class="tag">C</span><span class="tag">Tableau</span><span class="tag">Attribution</span></div></article><article class="skill reveal"><span class="skill-index">II.</span><h3>AIGC<br>& 视觉表达</h3><p>AI 视频工作流、商业插画、视觉包装与故事化内容策划。</p><div class="tags"><span class="tag">Midjourney</span><span class="tag">Runway</span><span class="tag">PS / CSP</span><span class="tag">Procreate</span></div></article><article class="skill reveal"><span class="skill-index">III.</span><h3>内容运营<br>& 社群增长</h3><p>爆款内容、游戏活动、KOL / KOC 矩阵与海外社区运营。</p><div class="tags"><span class="tag">10W+ Content</span><span class="tag">Game Ops</span><span class="tag">Discord</span></div></article></div></div></section>
+    <section class="section" id="skills"><div class="shell"><header class="section-head reveal"><p class="section-number">Capabilities</p><h2 class="section-title">技能星图</h2><p class="section-intro">数据是坐标，创意是引力，运营让二者形成真实的增长轨迹。</p></header><div class="skills-grid"><article class="skill reveal"><h3>数据分析<br>& 归因</h3><p>数据清洗、动态看板、用户留存、活动漏斗与效果复盘。</p></article><article class="skill reveal"><h3>AIGC<br>& 视觉表达</h3><p>AI 视频工作流、商业插画、视觉包装与故事化内容策划。</p></article><article class="skill reveal"><h3>内容运营<br>& 社群增长</h3><p>爆款内容、游戏活动、KOL / KOC 矩阵与海外社区运营。</p></article></div></div></section>
 
-    <section class="section" id="education"><div class="shell"><header class="section-head reveal"><p class="section-number">03 · Education</p><h2 class="section-title">教育经历</h2></header><div class="timeline"><article class="timeline-item reveal"><time class="date">2024 — 2026</time><div><h3>The University of Sydney</h3><h4>金融与数据分析 · 硕士</h4><p>在金融逻辑、商业决策与数据分析之间建立系统连接，强化量化洞察和跨文化沟通能力。</p></div></article><article class="timeline-item reveal"><time class="date">2019 — 2023</time><div><h3>西安电子科技大学</h3><h4>管理科学与工程类 · 本科</h4><p>工科与管理交叉背景，形成结构化问题解决能力，同时持续参与校园内容、插画与传播项目。</p></div></article></div></div></section>
+    <section class="section" id="education"><div class="shell"><header class="section-head reveal"><p class="section-number">Education</p><h2 class="section-title">教育经历</h2></header><div class="timeline"><article class="timeline-item reveal"><time class="date">2024.07 — 2026.09</time><div><h3>The University of Sydney</h3><h4>金融与数据分析方向 · 硕士</h4><p>研究方向为用户行为分析、内容传播效果评估、平台运营模式研究，关注数字内容与游戏市场。</p></div></article><article class="timeline-item reveal"><time class="date">2019.09 — 2023.06</time><div><h3>西安电子科技大学</h3><h4>管理科学与工程类 · 本科</h4><p>工科与管理交叉背景，获国家级设计奖项、西北赛区一等奖及校级优秀学生干部。</p></div></article></div></div></section>
 
-    <section class="section" id="experience"><div class="shell"><header class="section-head reveal"><p class="section-number">04 · Experience</p><h2 class="section-title">实习经历</h2></header><div class="timeline"><article class="timeline-item reveal"><time class="date">第七大道</time><div><h3>《神曲》游戏运营</h3><h4>内容运营 · 活动策划 · 海外社群</h4><ul><li>复盘公众号与活动数据，重构选题、卖点包装和用户参与路径。</li><li>推动月阅读量从 4,800 提升至 10,000+，增长 108%。</li><li>联动 Discord 社区运营，游戏内活动参与率提升 10%。</li></ul></div></article><article class="timeline-item reveal"><time class="date">腾讯 IEG</time><div><h3>TCA 校园传播项目</h3><h4>项目统筹 · KOL/KOC · 数据归因</h4><ul><li>统筹校园传播矩阵，策划创意内容库与视频内容。</li><li>方案通过腾讯总部评估，沉淀可复用的内容归因模型。</li><li>凭借项目协同与内容表现获评 TCA 优秀组员。</li></ul></div></article></div></div></section>
+    <section class="section" id="experience"><div class="shell"><header class="section-head reveal"><p class="section-number">Experience</p><h2 class="section-title">实习经历</h2></header><div class="timeline"><article class="timeline-item reveal"><time class="date">第七大道<br><small>2025.11 — 2026.01</small></time><div><h3>游戏运营实习生</h3><h4>内容运营 · 活动运营 · 社区运营 · 数据复盘</h4><ul><li>负责《神曲》H5、《神曲》怀旧服微信公众号内容策划与活动宣发，单月推文总阅读量由 4,800 提升至 10,000，月环比增长 108%。</li><li>参与游戏内活动方案策划与落地，围绕版本更新、节日节点及星座时装、坐骑等内容完成卖点包装，活动整体参与率环比提升 10%。</li><li>运营海外 Discord 社区，联动 GM 团队同步版本与活动信息，持续收集玩家反馈并向项目组提供用户侧输入。</li><li>搭建运营数据基础体系，跟踪公众号、游戏活动转化与社区反馈数据，完成数据拆解和效果归因。</li></ul></div></article><article class="timeline-item reveal"><time class="date">中信证券<br><small>2024.05 — 2024.07</small></time><div><h3>债券承做（债承）实习生</h3><h4>项目筛选 · 募集说明书 · 数据分析 · 投研支持</h4><ul><li>筛选深圳、广州地区 50 余家发债企业并整理潜在主体名单，基于 Wind 开展股权结构穿透与实际控制人识别，同时完成企业失信及合规核查，形成信用风险评估支持材料。</li><li>参与广州建筑工程集团募集说明书编制，负责财务数据整理、指标核对及财务报表与经营数据一致性检查，提升申报材料的准确性与规范性。</li><li>收集财务、市场及宏观数据并建立结构化数据库，使用 Excel / Python 完成数据清洗与处理，跟踪企业指标、开展同行业对比，辅助信用与行业研究。</li><li>将公司经营与行业数据转化为可视化图表并支持研究报告撰写，完成多份研究材料的数据整理与图表制作。</li></ul></div></article><article class="timeline-item reveal"><time class="date">腾讯 IEG 高校联盟（TCA）<br><small>2020.03 — 2022.08</small></time><div><h3>TCA 实习生</h3><h4>项目统筹 · 内容运营 · 活动运营 · 数据复盘</h4><ul><li>担任西安高校对接负责人，围绕《王者荣耀》大型官方赛事制定校园全链路传播方案，统筹校内电竞社团、KOL/KOC 与线下活动场景。</li><li>搭建校园赛事传播矩阵，独立策划 5–6 月校园创意内容方案；原创插画与故事化内容获单篇 10W+ 阅读量。</li><li>统筹组织赛事校园传播方案执行，联动校内合作方完成宣传触达、用户引流与线下活动落地。</li><li>针对赛事传播数据与 KOC 投放案例开展复盘，拆解内容传播效果和用户触达逻辑，沉淀可复用的校园内容传播模型。</li></ul></div></article></div></div></section>
 
-    <section class="section" id="projects"><div class="shell"><header class="section-head reveal"><p class="section-number">05 · Selected projects</p><h2 class="section-title">项目</h2></header><div class="projects"><article class="project reveal" data-number="01"><span class="project-label">Growth case · 神曲</span><h3>从内容低谷到阅读与参与双增长</h3><p>以数据复盘识别关键损耗，通过节日节点、星座主题和福利表达重构内容策略，并用后续表现验证方法。</p><div class="metrics"><div class="metric"><strong>+108%</strong><span>月阅读增长</span></div><div class="metric"><strong>+10%</strong><span>活动参与率</span></div></div></article><article class="project reveal" data-number="02"><span class="project-label">Content system · Tencent IEG</span><h3>校园内容矩阵与可归因传播模型</h3><p>从高校人群洞察出发，协同 KOL / KOC 资源，建立创意内容库并沉淀渠道与内容表现的分析框架。</p><div class="metrics"><div class="metric"><strong>100%</strong><span>总部评估通过</span></div><div class="metric"><strong>TOP</strong><span>TCA 优秀组员</span></div></div></article></div></div></section>
+    <section class="section" id="projects"><div class="shell"><header class="section-head reveal"><p class="section-number">Selected projects</p><h2 class="section-title">项目</h2></header><div class="projects"><article class="project reveal" data-number="01"><span class="project-label">Growth case · 神曲</span><h3>从内容低谷到阅读与参与双增长</h3><p>以数据复盘识别关键损耗，通过节日节点、星座主题和福利表达重构内容策略，并用后续表现验证方法。</p><div class="metrics"><div class="metric"><strong>+108%</strong><span>月阅读增长</span></div><div class="metric"><strong>+10%</strong><span>活动参与率</span></div></div></article><article class="project reveal" data-number="02"><span class="project-label">Content system · Tencent IEG</span><h3>校园内容矩阵与可归因传播模型</h3><p>从高校人群洞察出发，协同 KOL / KOC 资源，建立创意内容库并沉淀渠道与内容表现的分析框架。</p><div class="metrics"><div class="metric"><strong>100%</strong><span>总部评估通过</span></div><div class="metric"><strong>TOP</strong><span>TCA 优秀组员</span></div></div></article></div></div></section>
 
-    <section class="section" id="portfolio"><div class="shell"><header class="section-head reveal"><p class="section-number">06 · Creative works</p><h2 class="section-title">作品集</h2><p class="section-intro">影像、插画与数据可视化，是我理解世界的三种语言。</p></header><div class="gallery"><article class="work video-work reveal"><video controls preload="metadata" playsinline src="assets/ai-video.mp4" aria-label="AI 概念预告片"></video><div class="work-shade"></div><div class="work-copy"><small>MJ × Runway</small><h3>AI 概念预告片</h3></div></article><article class="work reveal"><img src="assets/xd-creative.jpg" alt="西安电子科技大学周边与表情包设计" onerror="this.hidden=true"><div class="placeholder">Waiting for creative artwork</div><div class="work-shade"></div><div class="work-copy"><small>Illustration · 10W+ Reach</small><h3>西电周边与表情包设计</h3></div></article><article class="work reveal"><img src="assets/tableau-dashboard.jpg" alt="Tableau 用户留存分析看板" onerror="this.hidden=true"><div class="placeholder">Waiting for data visualization</div><div class="work-shade"></div><div class="work-copy"><small>Tableau · Retention</small><h3>用户留存分析看板</h3></div></article></div></div></section>
+    <section class="section" id="portfolio"><div class="shell"><header class="section-head reveal"><p class="section-number">Creative works</p><h2 class="section-title">作品集</h2><p class="section-intro">影像、包装、表情与数据可视化，是我理解世界的不同语言。</p></header><div class="gallery">
+      <article class="work reveal"><span class="work-kicker">AI VIDEO · GAME MARKETING</span><h3>《第五人格》红蝶<br>AI 角色概念短片</h3><p class="work-summary">以美智子的角色身世为叙事切口，用“相遇—破碎—堕落”完成 30 秒情绪弧线；通过黑、红、白剪影与美人相 / 般若相反转，让泛娱乐潜客先对角色产生共情，再建立游戏探索欲。</p><div class="work-facts"><div class="work-fact"><strong>30s</strong><span>电影化角色叙事</span></div><div class="work-fact"><strong>3 Acts</strong><span>相遇 · 破碎 · 堕落</span></div></div><p class="work-keywords">极简剪影 · 形态反转 · 女性觉醒 · 音乐卡点 · 潜客转化</p><button class="work-detail" type="button" data-dialog="dialog-ai">查看详情</button></article>
+      <article class="work reveal"><span class="work-kicker">PACKAGING · CAMPUS CULTURE</span><h3>西电中秋<br>周边包装设计</h3><p class="work-summary">围绕西电校园文化与中秋节点，将校徽、1931、航天意象和节日祝福整合为统一的六边形礼盒视觉系统，让校园记忆转化为可分享的节日内容。</p><div class="work-facts"><div class="work-fact"><strong>6 面</strong><span>完整包装视觉系统</span></div><div class="work-fact"><strong>1 套</strong><span>校园节日礼盒方案</span></div></div><p class="work-keywords">校园文化 · 节日营销 · 包装视觉 · 商业插画</p><button class="work-detail" type="button" data-dialog="dialog-xidian">查看详情</button></article>
+      <article class="work reveal"><span class="work-kicker">STICKER DESIGN · WECHAT</span><h3>“哈喽小西小电”<br>表情包设计</h3><p class="work-summary">以西电拟人化 IP 为核心，构建覆盖问候、学习、困惑、鼓励与晚安等校园日常语境的系列表情，用轻量视觉语言提升 IP 亲和力与传播效率。</p><div class="work-facts"><div class="work-fact"><strong>5,087</strong><span>下载次数</span></div><div class="work-fact"><strong>203,576</strong><span>发送次数</span></div></div><p class="work-keywords">数据来源：微信表情开放平台后台</p><button class="work-detail" type="button" data-dialog="dialog-emoji">查看详情</button></article>
+      <article class="work reveal"><span class="work-kicker">TABLEAU · POLICY INSIGHTS</span><h3>泰国数字游民<br>政策洞察看板</h3><p class="work-summary">以跨城市流动、停留行为与热门聚集地为分析核心，为泰国政策制定者识别数字游民趋势，并设计更精准、更具影响力的吸引与留存策略。</p><div class="work-facts"><div class="work-fact"><strong>2014—24</strong><span>十年跨境流动数据</span></div><div class="work-fact"><strong>≈252K</strong><span>旅行停留记录</span></div></div><p class="work-keywords">政策洞察 · 城市热点 · 停留时长 · 全球流动 · 目的地竞争力</p><button class="work-detail" type="button" data-dialog="dialog-tableau">查看详情</button></article>
+    </div></div></section>
 
-    <section class="section contact" id="contact"><div class="shell reveal"><p class="section-number">07 · Contact</p><h2>Let's create<br>something meaningful.</h2><p>期待与你交流数据、创意与增长的更多可能。</p><div class="contact-links"><a class="button primary" href="mailto:yzhao2725@gmail.com">yzhao2725@gmail.com</a><a class="button" href="tel:+8618736629996">+86 187 3662 9996</a></div></div></section>
+    <dialog class="project-dialog" id="dialog-ai"><button class="dialog-close" type="button" aria-label="关闭详情">×</button><div class="dialog-inner"><span class="dialog-kicker">AI Video · Identity V · Character Marketing</span><h2>《第五人格》红蝶 AI 角色概念短片</h2><p class="dialog-lead">项目面向未接触游戏的潜在用户，以红蝶（美智子）的角色身世替代复杂玩法介绍：从跨文化爱情、被迫分离到怨恨觉醒，在 30 秒内建立“相遇—破碎—堕落”的完整情绪弧线。视觉借鉴《喜鹊谋杀案》片头，以黑 / 红 / 白极简剪影、美人相与般若相的瞬时反转、音乐卡点和空间撕裂制造停顿感与记忆点，最终形成“故事吸引—角色共情—了解角色—尝试游戏”的转化路径。</p><div class="dialog-media single"><video controls preload="metadata" playsinline src="assets/ai-video.mp4"></video></div><div class="dialog-stats"><div class="dialog-stat"><strong>ChatGPT</strong><span>脚本浓缩、视觉提示词与参考图生成</span></div><div class="dialog-stat"><strong>Liblib</strong><span>剪影动态、转场与光影控制</span></div></div></div></dialog>
+    <dialog class="project-dialog" id="dialog-xidian"><button class="dialog-close" type="button" aria-label="关闭详情">×</button><div class="dialog-inner"><span class="dialog-kicker">Packaging · Illustration · Campus Culture</span><h2>西电中秋周边包装设计</h2><p class="dialog-lead">围绕西电校园文化与中秋节点，将校徽、1931、航天探索意象和节日祝福转化为六面统一的礼盒视觉系统，在纪念性、年轻表达与社交传播之间建立平衡。</p><div class="dialog-media"><img src="assets/mooncake-box-reference.jpeg" alt="西电月饼礼盒包装展开图"><img src="assets/mooncake-reference.jpeg" alt="西电月饼实物"></div><a class="dialog-link" href="https://mp.weixin.qq.com/s/cOtiVpv_RZPQtTsybVzo1g" target="_blank" rel="noopener noreferrer">查看西电周边完整推文 ↗</a></div></dialog>
+    <dialog class="project-dialog" id="dialog-emoji"><button class="dialog-close" type="button" aria-label="关闭详情">×</button><div class="dialog-inner"><span class="dialog-kicker">Sticker Design · WeChat</span><h2>“哈喽小西小电”表情包</h2><p class="dialog-lead">围绕西电拟人化 IP“小西”和“小电”设计系列动态语境，覆盖问候、学习、困惑、鼓励和晚安等校园日常场景，以轻量化视觉语言提升 IP 亲和力与传播效率。</p><div class="dialog-media"><img src="assets/emoji-pack.png" alt="哈喽小西小电表情包完整预览"><img src="assets/emoji-performance.png" alt="微信表情开放平台传播数据"></div><div class="dialog-stats"><div class="dialog-stat"><strong>5,087</strong><span>下载次数</span></div><div class="dialog-stat"><strong>203,576</strong><span>发送次数</span></div></div><a class="dialog-link" href="https://mp.weixin.qq.com/s/QrfbfuWNeQnvOztSw1RkRw" target="_blank" rel="noopener noreferrer">查看表情包完整推文 ↗</a></div></dialog>
+    <dialog class="project-dialog" id="dialog-tableau"><button class="dialog-close" type="button" aria-label="关闭详情">×</button><div class="dialog-inner"><span class="dialog-kicker">Tableau · Digital Nomad · Policy Insights</span><h2>泰国数字游民政策洞察看板</h2><p class="dialog-lead">本项目通过数据证据呈现数字游民的全球流动、行为特征与泰国城市热点，帮助政策制定者识别长期趋势，并制定有针对性、高影响力的数字游民吸引与留存策略。数据覆盖 2014 至 2024 年，包含约 25.2 万条旅行停留记录；每条记录代表一名用户在一个地点的一次停留，因此可以从时间、空间和行为三个维度观察数字游民的迁移模式。</p><div class="dialog-media single"><img src="assets/thailand-digital-nomad-dashboard.png" alt="泰国数字游民政策洞察 Tableau 看板，展示全球分布、热门目的地、到访趋势、停留时长与泰国城市热点"></div><div class="dialog-stats"><div class="dialog-stat"><strong>2014—2024</strong><span>数据覆盖时间范围</span></div><div class="dialog-stat"><strong>≈252,000</strong><span>旅行与地点停留记录</span></div></div></div></dialog>
+
+    <section class="section contact" id="contact"><div class="shell reveal"><p class="section-number">Contact</p><h2>Let's create<br>something meaningful.</h2><p>期待与你交流数据、创意与增长的更多可能。</p><div class="contact-links"><a class="button primary" href="mailto:yzhao2725@gmail.com">yzhao2725@gmail.com</a><a class="button" href="tel:+8618736629996">+86 187 3662 9996</a></div></div></section>
   </main>
 
   <footer><div class="shell footer-row"><span>© 2026 Ye Zhao</span><span>Data tells the story. Imagination gives it meaning.</span></div></footer>
@@ -229,7 +264,12 @@
     resizeStars(); addEventListener('resize',resizeStars); drawStars();
 
     const cursor = document.querySelector('.cursor-light'); let tx=innerWidth/2,ty=innerHeight/2,cx=tx,cy=ty;
-    addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY},{passive:true});
+    let lastDust=0;
+    addEventListener('pointermove',e=>{
+      tx=e.clientX;ty=e.clientY;
+      const now=performance.now();
+      if(!reduceMotion&&now-lastDust>34){lastDust=now;const dust=document.createElement('i');dust.className='cursor-star';dust.style.left=e.clientX+'px';dust.style.top=e.clientY+'px';dust.style.setProperty('--dust-x',(Math.random()*22-11)+'px');dust.style.setProperty('--dust-y',(Math.random()*22+7)+'px');document.body.appendChild(dust);setTimeout(()=>dust.remove(),760)}
+    },{passive:true});
     function follow(){cx+=(tx-cx)*.18;cy+=(ty-cy)*.18;document.documentElement.style.setProperty('--cx',cx+'px');document.documentElement.style.setProperty('--cy',cy+'px');requestAnimationFrame(follow)}
     if(!reduceMotion) follow();
     document.querySelectorAll('a,button,.work,.project').forEach(el=>{el.addEventListener('pointerenter',()=>cursor.classList.add('hover'));el.addEventListener('pointerleave',()=>cursor.classList.remove('hover'))});
@@ -243,6 +283,17 @@
     const nav=document.querySelector('.nav'),menu=document.querySelector('.menu');
     menu.addEventListener('click',()=>{const open=nav.classList.toggle('open');menu.setAttribute('aria-expanded',open);menu.textContent=open?'关闭':'菜单'});
     links.forEach(link=>link.addEventListener('click',()=>{nav.classList.remove('open');menu.setAttribute('aria-expanded','false');menu.textContent='菜单'}));
+
+    const detailDialogs=[...document.querySelectorAll('.project-dialog')];
+    document.querySelectorAll('[data-dialog]').forEach(button=>button.addEventListener('click',()=>{
+      const dialog=document.getElementById(button.dataset.dialog);
+      if(dialog){dialog.showModal();document.documentElement.style.overflow='hidden'}
+    }));
+    detailDialogs.forEach(dialog=>{
+      dialog.querySelector('.dialog-close').addEventListener('click',()=>dialog.close());
+      dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close()});
+      dialog.addEventListener('close',()=>{document.documentElement.style.overflow='';dialog.querySelectorAll('video').forEach(video=>video.pause())});
+    });
 
     let lastShot=0;
     addEventListener('scroll',()=>{
