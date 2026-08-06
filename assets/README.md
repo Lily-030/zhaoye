@@ -7,6 +7,7 @@
 - `ai-video.mp4`：AI 概念预告片，建议 H.264 编码的 MP4，1080p，尽量控制在 50 MB 内。
 - `xd-creative.jpg`：西电周边、表情包或插画项目封面，建议 1600 × 1000 px。
 - `tableau-dashboard.jpg`：Tableau 看板截图，建议 1600 × 1000 px。
+- `Ye-Zhao-Resume.pdf`：可下载的个人简历 PDF；上传后首页“下载简历”按钮会自动生效。
 
 ## 在 GitHub 网页上传
 
