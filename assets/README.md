@@ -3,6 +3,7 @@
 把个人素材上传到这个 `assets` 文件夹，并保持下面的文件名：
 
 - `avatar.jpg`：个人头像，建议正方形，至少 1000 × 1000 px，JPG/WebP 均可（如使用 WebP，请同步修改 `index.html` 文件名）。
+- `lifestyle.jpg`：首屏全屏生活照，建议竖版或横版高清照片；当前使用海上生活照。
 - `ai-video.mp4`：AI 概念预告片，建议 H.264 编码的 MP4，1080p，尽量控制在 50 MB 内。
 - `xd-creative.jpg`：西电周边、表情包或插画项目封面，建议 1600 × 1000 px。
 - `tableau-dashboard.jpg`：Tableau 看板截图，建议 1600 × 1000 px。

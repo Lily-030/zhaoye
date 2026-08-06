@@ -253,11 +253,85 @@
     .reveal { opacity: 0; transform: translateY(38px); transition: opacity .85s var(--ease), transform .85s var(--ease); }
     .reveal.visible { opacity: 1; transform: none; }
 
+    /* Cinematic direction: full-bleed photography + living deep-sea background */
+    :root {
+      --ink: #f7f9fc;
+      --muted: rgba(231, 238, 247, .67);
+      --paper: #07111d;
+      --glass: rgba(12, 25, 39, .52);
+      --line: rgba(255,255,255,.16);
+      --shadow: 0 28px 85px rgba(0, 8, 20, .32), inset 0 1px 0 rgba(255,255,255,.13);
+    }
+    body { background: #07111d; }
+    body::before {
+      background:
+        radial-gradient(circle at 16% 23%, rgba(28, 119, 197, .23), transparent 32%),
+        radial-gradient(circle at 80% 48%, rgba(30, 176, 192, .15), transparent 35%),
+        radial-gradient(circle at 44% 91%, rgba(190, 145, 91, .12), transparent 30%),
+        linear-gradient(180deg, #07111d 0%, #0a1d2e 46%, #06101b 100%);
+    }
+    .ambient-bg { position: fixed; inset: 0; z-index: -2; overflow: hidden; pointer-events: none; }
+    .ambient-bg i { position: absolute; border-radius: 50%; filter: blur(75px); opacity: .34; mix-blend-mode: screen; animation: drift 18s ease-in-out infinite alternate; }
+    .ambient-bg i:nth-child(1) { width: 42vw; height: 42vw; left: -12vw; top: 28vh; background: #0b76bd; }
+    .ambient-bg i:nth-child(2) { width: 36vw; height: 36vw; right: -8vw; top: 8vh; background: #1e8498; animation-delay: -7s; animation-duration: 23s; }
+    .ambient-bg i:nth-child(3) { width: 28vw; height: 28vw; left: 38vw; bottom: -9vw; background: #805d43; animation-delay: -12s; animation-duration: 27s; }
+    @keyframes drift { to { transform: translate3d(7vw,-8vh,0) scale(1.18) rotate(18deg); } }
+    .glass { background: var(--glass); }
+    .nav { background: rgba(4, 12, 21, .48); }
+    .brand, .nav-links a { color: rgba(255,255,255,.88); }
+    .brand span, .nav-links a:not(.active) { color: rgba(255,255,255,.58); }
+    .nav-links a:hover, .nav-links a.active { color: #fff; background: rgba(255,255,255,.12); }
+    .menu-button { color: #fff; }
+
+    .hero { position: relative; min-height: 100svh; padding: 0; overflow: hidden; isolation: isolate; }
+    .hero-scene { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+    .hero-photo {
+      width: 100%; height: 100%; object-fit: cover; object-position: 54% 46%;
+      transform: translate3d(calc(5% + var(--hero-x, 0) * 1px), calc(var(--hero-y, 0) * 1px), 0) scale(calc(1.12 + var(--hero-scroll, 0) * .00008));
+      filter: saturate(.92) contrast(1.03);
+      animation: hero-breathe 14s ease-in-out infinite alternate;
+      will-change: transform;
+    }
+    @keyframes hero-breathe { to { filter: saturate(1.06) contrast(1.02); } }
+    .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(2,8,15,.78) 0%, rgba(2,8,15,.48) 38%, rgba(2,8,15,.08) 69%), linear-gradient(180deg, rgba(2,8,15,.20), transparent 52%, rgba(2,8,15,.74)); }
+    .hero-grain { position: absolute; inset: 0; opacity: .12; background: repeating-radial-gradient(circle at 30% 20%, rgba(255,255,255,.22) 0 .5px, transparent .7px 3px); background-size: 5px 5px; mix-blend-mode: soft-light; }
+    .hero-grid { min-height: 100svh; grid-template-columns: 1fr .45fr; align-items: center; padding-top: 98px; padding-bottom: 56px; }
+    .hero .eyebrow { color: rgba(255,255,255,.78); border-color: rgba(255,255,255,.21); background: rgba(0,0,0,.16); }
+    .hero h1 { max-width: 760px; color: #fff; text-shadow: 0 10px 40px rgba(0,0,0,.24); }
+    .hero h1 .gradient-text { color: #fff; background: none; -webkit-text-fill-color: currentColor; }
+    .hero-copy { max-width: 620px; color: rgba(255,255,255,.77); text-shadow: 0 4px 20px rgba(0,0,0,.28); }
+    .hero .pill-primary { color: #10151b; background: #fff; }
+    .hero .pill-secondary { color: #fff; background: rgba(255,255,255,.11); border-color: rgba(255,255,255,.26); }
+    .hero .profile { align-self: end; justify-self: end; width: 300px; padding: 9px; border-radius: 28px; background: rgba(3,13,23,.43); transform: none; }
+    .hero .profile:hover { transform: translateY(-6px); }
+    .hero .portrait { aspect-ratio: 4/3; border-radius: 21px; background: rgba(255,255,255,.08); }
+    .hero .portrait img { object-position: 50% 25%; }
+    .hero .portrait-fallback { color: rgba(255,255,255,.25); font-size: 52px; }
+    .hero .profile-copy { padding: 17px 13px 12px; }
+    .hero .profile h2 { color: #fff; font-size: 18px; }
+    .hero .profile-role, .hero .education p { color: rgba(255,255,255,.61); font-size: 10px; }
+    .hero .education { margin-top: 13px; padding-top: 12px; border-color: rgba(255,255,255,.12); gap: 8px; }
+    .hero .education strong { color: rgba(255,255,255,.88); font-size: 11px; }
+    .scroll-cue { position: absolute; left: 50%; bottom: 24px; transform: translateX(-50%); display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,.58); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; }
+    .scroll-cue::before { content: ""; width: 34px; height: 1px; background: currentColor; transform-origin: left; animation: cue 1.8s ease-in-out infinite; }
+    @keyframes cue { 50% { transform: scaleX(.35); opacity: .35; } }
+
+    .section-kicker { color: #59c8e1; }
+    .chip { color: rgba(255,255,255,.73); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.11); }
+    .loop-step { background: rgba(255,255,255,.055); border-color: rgba(255,255,255,.09); }
+    .case-label span:last-child, .work-number { color: rgba(255,255,255,.42); }
+    .case-metrics { background: linear-gradient(145deg, rgba(9,107,164,.25), rgba(23,101,116,.16)); }
+    .media-fallback { color: rgba(255,255,255,.7); background: linear-gradient(145deg,#123b58,#15566c 58%,#5b5041); }
+    .contact-card { background: rgba(8,23,36,.63); }
+    footer { border-top: 1px solid rgba(255,255,255,.08); }
+
     @media (max-width: 900px) {
       section { padding: 90px 0; }
       .hero-grid { grid-template-columns: 1fr; }
       .hero-copy { max-width: 650px; }
       .profile { width: min(470px,100%); transform: none; }
+      .hero-grid { grid-template-columns: 1fr; align-content: center; }
+      .hero .profile { width: 280px; justify-self: start; align-self: auto; }
       .capabilities { grid-template-columns: 1fr; }
       .capability, .capability:nth-child(2), .capability:nth-child(3) { min-height: auto; margin-top: 0; }
       .capability h3 { margin-top: 35px; }
@@ -275,6 +349,15 @@
       .nav.open .nav-links { display: flex; }
       .nav-links a { display: block; text-align: center; }
       .hero { padding-top: 120px; }
+      .hero { padding-top: 0; }
+      .hero-photo { object-position: 58% 50%; }
+      .hero-photo { transform: translate3d(calc(var(--hero-x, 0) * 1px), calc(var(--hero-y, 0) * 1px), 0) scale(calc(1.08 + var(--hero-scroll, 0) * .00006)); }
+      .hero-shade { background: linear-gradient(180deg, rgba(2,8,15,.26), rgba(2,8,15,.16) 28%, rgba(2,8,15,.80) 73%, rgba(2,8,15,.93)); }
+      .hero-grid { align-content: end; padding-top: 150px; padding-bottom: 74px; gap: 24px; }
+      .hero .eyebrow { margin-bottom: 15px; }
+      .hero-copy { font-size: 15px; margin-top: 18px; }
+      .hero .profile { display: none; }
+      .scroll-cue { display: none; }
       h1 { font-size: clamp(49px,16vw,72px); }
       .loop { grid-template-columns: 1fr; }
       .case-main { padding: 28px 18px; }
@@ -295,6 +378,7 @@
 </head>
 <body>
   <div class="mouse-glow" aria-hidden="true"></div>
+  <div class="ambient-bg" aria-hidden="true"><i></i><i></i><i></i></div>
 
   <header class="nav-wrap">
     <nav class="nav glass" aria-label="主导航">
@@ -308,10 +392,15 @@
 
   <main>
     <section class="hero" id="about">
+      <div class="hero-scene" aria-hidden="true">
+        <img class="hero-photo" src="assets/lifestyle.jpg" alt="">
+        <div class="hero-shade"></div>
+        <div class="hero-grain"></div>
+      </div>
       <div class="shell hero-grid">
         <div class="reveal">
           <div class="eyebrow">Open to growth & creative opportunities</div>
-          <h1>理性数据洞察<span class="gradient-text">感性视觉美学</span></h1>
+          <h1>面向未来<span class="gradient-text">成就未来</span></h1>
           <p class="hero-copy">悉尼大学金融与数据分析硕士。用严谨的数据分析拆解用户行为与增长路径，以 AIGC 视频、商业视觉与内容策略，把洞察转化为可衡量的业务增长。</p>
           <div class="hero-actions">
             <a class="pill pill-primary" href="#cases">查看增长案例 <span aria-hidden="true">↘</span></a>
@@ -321,7 +410,7 @@
 
         <article class="profile glass reveal">
           <div class="portrait">
-            <img src="assets/avatar.jpg" alt="赵烨个人头像" onerror="this.hidden=true">
+            <img src="assets/avatar.jpg" alt="赵烨个人头像" onerror="this.onerror=null;this.src='assets/lifestyle.jpg'">
             <div class="portrait-fallback" aria-hidden="true">YZ</div>
           </div>
           <div class="profile-copy">
@@ -336,6 +425,7 @@
           </div>
         </article>
       </div>
+      <div class="scroll-cue" aria-hidden="true">Scroll to explore</div>
     </section>
 
     <section id="capabilities">
@@ -410,6 +500,19 @@
       requestAnimationFrame(moveGlow);
     }
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches) moveGlow();
+
+    const hero = document.querySelector('.hero');
+    const heroPhoto = document.querySelector('.hero-photo');
+    let heroPointerX = 0, heroPointerY = 0;
+    hero.addEventListener('pointermove', (event) => {
+      heroPointerX = ((event.clientX / innerWidth) - .5) * -10;
+      heroPointerY = ((event.clientY / innerHeight) - .5) * -7;
+      heroPhoto.style.setProperty('--hero-x', heroPointerX.toFixed(2));
+      heroPhoto.style.setProperty('--hero-y', heroPointerY.toFixed(2));
+    }, { passive: true });
+    addEventListener('scroll', () => {
+      root.style.setProperty('--hero-scroll', Math.min(scrollY, innerHeight));
+    }, { passive: true });
 
     document.querySelectorAll('.glass').forEach((card) => {
       card.addEventListener('pointermove', (event) => {
